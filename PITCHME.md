@@ -1,75 +1,92 @@
 ---
 marp: true
-title: Marp CLI example
-description: Hosting Marp slide deck on the web
-theme: uncover
+theme: simple
+class:
+  - lead
 paginate: true
-_paginate: false
+header: 'Programowanie generyczne algorytmów z wykorzystaniem języka C++'
+footer: 'Dawid Bińkuś'
 ---
-
-![bg](./assets/gradient.jpg)
-
-# <!--fit--> Marp CLI example
-
-Hosting Marp slide deck on the web
-
-https://github.com/yhatt/marp-cli-example
-
-<style scoped>a { color: #eee; }</style>
-
-<!-- This is presenter note. You can write down notes through HTML comment. -->
+<!-- _class: invert -->
+# Programowanie generyczne algorytmów
+##### z wykorzystaniem języka C++
+###### Dawid Bińkuś - Uniwersytet Gdański
 
 ---
-
-![Marp bg 60%](https://raw.githubusercontent.com/marp-team/marp/master/marp.png)
-
----
-
-![bg](#123)
-![](#fff)
-
-##### <!--fit--> [Marp CLI](https://github.com/marp-team/marp-cli) + [GitHub Pages](https://github.com/pages) | [Netlify](https://www.netlify.com/) | [Vercel](https://vercel.com/)
-
-##### <!--fit--> 👉 The easiest way to host<br />your Marp deck on the web
+# Zagadnienia
+- Cel pracy magisterskiej
+- Funkcjonalności języka C++ w kontekście generyczności
+- Wybór algorytmów
+- Środowisko testowe
+- Egzekucja badań
 
 ---
-
-![bg right 60%](https://icongr.am/octicons/mark-github.svg)
-
-## **[GitHub Pages](https://github.com/pages)**
-
-#### Ready to write & host your deck!
-
-[![Use this as template h:1.5em](https://img.shields.io/badge/-Use%20this%20as%20template-brightgreen?style=for-the-badge&logo=github)](https://github.com/yhatt/marp-cli-example/generate)
-
+## Cel pracy magisterskiej
+- Zgłębienie tematu programowania generycznego na przykładzie języka C++
+- Przegląd funkcjonalności umożliwiających programowanie generyczne
+- Analiza wpływu zastosowania generyczności (wydajność, poprawność)
 ---
-
-![bg right 60%](https://www.netlify.com/img/press/logos/logomark.svg)
-
-## **[Netlify](https://www.netlify.com/)**
-
-#### Ready to write & host your deck!
-
-[![Deploy to Netlify h:1.5em](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yhatt/marp-cli-example)
-
+## Funkcjonalności języka C++ w kontekście generyczności
+- Szablony
+- Klasy cech i wytycznych
+    - type_traits
+- SFINAE
+- Variadic templates
+- Fold expressions (C++17)
+- Krotki
+- Sekwencje indeksów
 ---
-
-![bg right 60%](https://icongr.am/simple/zeit.svg)
-
-## **[Vercel](https://vercel.com/)**
-
-#### Ready to write & host your deck!
-
-[![Deploy to Vercel h:1.5em](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/yhatt/marp-cli-example)
-
+## Wybór algorytmów
+- Arytmetyka wielomianów
+- Operacje na macierzach
+- Algorytm Karacuby
+- Drzewa binarne (+ podstawowe operacje)
 ---
-
-### <!--fit--> :ok_hand:
-
+### Arytmetyka wielomianów
+- Podstawowe obliczenia na wielomianach
+  - dodawanie
+  - odejmowanie
+  - mnożenie
+- Dzielenie wielomianów
+- GCD dla wielomianów
 ---
-
-![bg 40% opacity blur](https://avatars1.githubusercontent.com/u/3993388?v=4)
-
-### Created by Yuki Hattori ([@yhatt](https://github.com/yhatt))
-
-https://github.com/yhatt/marp-cli-example
+1. Implementacja bez użycia generyczności
+1. Implementacja z uwzględnieniem generyczności wielomianów (templates)
+---
+### Operacje na macierzach
+- Operacje elementarne:
+  - Dodanie do jednego wiersza inny, pomnożony przez liczbę
+  - Zamienianie wierszy miejscami
+  - Mnożenie wiersza przez liczbę != 0
+- Dodawanie macierzy
+- Mnożenie macierzy przez liczbę
+- Mnożenie macierzy
+---
+1. Implementacja macierzy bez użycia generyczności (założenie = liczby zmiennoprzecinkowe)
+1. Zastosowanie generyczności (macierze mogą zawierać dowolny typ danych)
+---
+### Algorytm Karacuby
+1. Implementacja rekurencyjna, iteracyjna.
+1. Porównanie wydajności dla dużych i małych liczb.
+1. Wpływ zastosowania generycznści.
+---
+### Drzewa binarne
+- Wyszukiwanie klucza
+- Wyszukiwanie min i max w drzewie
+- Wyszukiwanie następnika i poprzednika
+- Wstawianie oraz usuwanie klucza
+- Wyważanie drzewa (drzewa czerwono-czarne)
+---
+### Środowisko testowe
+- Wydajność
+  - https://github.com/ivafanas/sltbench
+  - std::chrono - własny framework do testowania
+  - https://github.com/google/benchmark
+- Zużycie pamięci
+  - POSIX API
+---
+### Egzekucja badań
+- Powrównianie wyników z różnych środowisk testowych
+- Wykorzystanie const i constexpr w celu przyspieszenia egzekucji (o ile to możliwe)
+---
+# Dziękuję za uwagę
